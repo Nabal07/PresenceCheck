@@ -1,0 +1,109 @@
+/* src/style.css */
+:root {
+  --primary: #10b981;
+  --danger: #ef4444;
+  --gradient-bg: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #1e293b);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: var(--gradient-bg);
+  background-size: 400% 400%;
+  animation: gradientAnimation 12s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  /* Padding reduzido para um visual mais compacto */
+  padding: 2.2rem; 
+  border-radius: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  width: 90%;
+  /* Reduzido de 600px para 380px para o efeito "celular" */
+  max-width: 380px; 
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Fontes ajustadas para a nova escala menor */
+h1 { color: #f8fafc; font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; }
+p { color: #94a3b8; margin-bottom: 1.8rem; font-size: 1rem; }
+
+input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid #334155;
+  border-radius: 1rem;
+  box-sizing: border-box; 
+  outline: none;
+  font-size: 1rem;
+  background: #0f172a;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+input:focus { 
+  border-color: #3b82f6; 
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* Botões empilhados por padrão para o estilo mobile */
+.btn-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+button {
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+button:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+.btn-confirm { 
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-decline { 
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.status-msg {
+  margin-top: 1.5rem;
+  font-weight: 600;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  font-size: 0.95rem;
+}
