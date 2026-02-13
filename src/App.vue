@@ -85,7 +85,7 @@ const enviarResposta = async (decisao: boolean) => {
       <input 
         v-model="nomeDigitado"
         type="text" 
-        placeholder="Seu nome completo"
+        placeholder="Seu nome "
       />
 
       <div class="btn-group">
