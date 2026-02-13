@@ -52,7 +52,7 @@ const enviarResposta = async (decisao: boolean) => {
   };
 
   try {
-    const url = import.meta.env.VITE_BACK_URL
+    const url = import.meta.env.VITE_BACK_URL;
     const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -68,7 +68,8 @@ const enviarResposta = async (decisao: boolean) => {
       
       nomeDigitado.value = ''; 
     } else {
-      mensagemStatus.value = "Erro ao registrar. Tente novamente.";
+      const mensagemErroApi = await response.text();
+      mensagemStatus.value = mensagemErroApi || "Erro ao registrar. Tente novamente.";
     }
   } catch (error) {
     mensagemStatus.value = "Erro ao conectar com a API. Verifique o CORS.";
