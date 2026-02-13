@@ -1,6 +1,4 @@
 /* src/style.css */
-
-/* Reset Global: Remove comportamentos padrões que causam assimetria */
 * {
   margin: 0;
   padding: 0;
@@ -24,12 +22,12 @@ body {
   background-size: 400% 400%;
   animation: gradientAnimation 12s ease infinite;
   
-  /* Centralização Flexbox Pura */
   display: flex;
-  align-items: center;     /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente com simetria total */
+  justify-content: center; 
+  align-items: flex-start;
+  padding-top: 22vh;       
   
-  overflow: hidden; /* Evita que barras de rolagem desloquem o centro */
+  overflow: hidden; 
 }
 
 @keyframes gradientAnimation {
@@ -38,13 +36,11 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Container de segurança para garantir a posição */
 .card-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
-  padding: 0 1rem; /* Margem mínima de segurança nas bordas do visor */
+  padding: 0 1rem; 
 }
 
 .card {
@@ -55,7 +51,6 @@ body {
   border-radius: 1.2rem;
   box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5);
   
-  /* Largura fixa percentual para garantir espaços iguais */
   width: 100%;
   max-width: 300px; 
   
@@ -64,7 +59,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Fontes otimizadas para escala mobile compacta */
 h1 { color: #f8fafc; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem; }
 p { color: #94a3b8; margin-bottom: 1.2rem; font-size: 0.8rem; line-height: 1.4; }
 
@@ -79,7 +73,6 @@ input {
   font-size: 0.9rem;
   background: #0f172a;
   color: white;
-  transition: all 0.3s ease;
 }
 
 input:focus { 
@@ -100,29 +93,17 @@ button {
   font-weight: 600;
   color: white;
   cursor: pointer;
-  transition: all 0.2s ease;
   text-transform: uppercase;
   font-size: 0.8rem;
 }
 
-button:active { transform: scale(0.98); }
-
-.btn-confirm { 
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.2);
-}
-
-.btn-decline { 
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  box-shadow: 0 3px 10px rgba(239, 68, 68, 0.2);
-}
+.btn-confirm { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+.btn-decline { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
 
 .status-msg {
   margin-top: 1rem;
   font-weight: 600;
   padding: 0.6rem;
-  border-radius: 0.6rem;
-  background: rgba(59, 130, 246, 0.15);
   color: #60a5fa;
   font-size: 0.75rem;
 }
